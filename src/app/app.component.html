@@ -1,0 +1,6 @@
+<hello name="{{ name }}"></hello>
+<div *ngFor="let person of data;let i=index">
+<input type="text" [hidden]="person.state=='edit'" [(ngModel)]="data[i].name"/> 
+<span [hidden]="person.state=='save'">{{person.name}}</span>
+<button (click)="edit(i,person.state)">{{person.state}}</button>
+</div>
